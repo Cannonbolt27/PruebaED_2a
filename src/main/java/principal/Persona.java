@@ -7,7 +7,14 @@ package principal;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.Objects;
-
+/**
+ * Clase que representa a una persona.
+ * Esta clase almacena información sobre una persona, como su NIF, nombre,
+ * género y fecha de nacimiento.
+ *
+ * @author Odei
+ * @version 1.0
+ */
 public class Persona implements Comparable<Persona> {
 
     private Nif nif;
@@ -68,7 +75,12 @@ public class Persona implements Comparable<Persona> {
         this.nacimiento = nacimiento;
     }
 
-    public int getEdad() {
+    /**
+     * Obtiene la edad de la persona.
+     *
+     * @return La edad de la persona.
+     */
+     public int getEdad() {
         return Period.between(nacimiento, LocalDate.now()).getYears();
     }
 
@@ -90,6 +102,12 @@ public class Persona implements Comparable<Persona> {
     }
 
     @Override
+    /**
+     * Compara esta persona con otra para verificar si son iguales.
+     *
+     * @param otraPersona La persona con la que comparar.
+     * @return true si las personas son iguales, false en caso contrario.
+     */
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
